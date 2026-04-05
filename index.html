@@ -196,7 +196,6 @@
     </header>
 
     <div class="container">
-        <!-- Главная страница -->
         <div id="homePage" class="page active">
             <div class="result-card">
                 <div style="font-size: 40px;">📱</div>
@@ -227,7 +226,6 @@
             </div>
         </div>
 
-        <!-- Страница жалоб -->
         <div id="reportPage" class="page">
             <div class="card">
                 <h3>⚠️ Сообщить о мошеннике</h3>
@@ -246,7 +244,9 @@
     </div>
 
     <script>
-        const API_BASE = 'http://localhost:5000';
+        // ===== НАСТРОЙКИ =====
+        // Render бэкенд
+        const API_BASE = 'https://safecall-backend.onrender.com';
         
         let mediaRecorder = null;
         let audioChunks = [];
@@ -273,7 +273,7 @@
                 if (!data.error) return data;
             } catch (e) {
                 console.error(e);
-                showToast('❌ Ошибка соединения');
+                showToast('❌ Ошибка соединения с сервером');
             }
             return null;
         }
